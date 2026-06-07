@@ -14,8 +14,16 @@
  *   extraScript — filename of a page-specific JS file to defer-load (e.g. work.js)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, existsSync, statSync } from 'fs';
 import { join, basename } from 'path';
+
+function copyDir(src, dest) {
+  mkdirSync(dest, { recursive: true });
+  for (const entry of readdirSync(src)) {
+    const s = join(src, entry), d = join(dest, entry);
+    statSync(s).isDirectory() ? copyDir(s, d) : copyFileSync(s, d);
+  }
+}
 
 const SRC       = './src';
 const PAGES     = join(SRC, 'pages');
@@ -114,6 +122,13 @@ console.log('\nwaralenda build\n');
   if (existsSync(`./${f}`)) {
     copyFileSync(`./${f}`, join(DIST, f));
     console.log(`  ✓ ${f} (copied)`);
+  }
+});
+
+['assets', 'fonts'].forEach(dir => {
+  if (existsSync(`./${dir}`)) {
+    copyDir(`./${dir}`, join(DIST, dir));
+    console.log(`  ✓ ${dir}/ (copied)`);
   }
 });
 
