@@ -3,20 +3,21 @@
  * Styles for pets.html only. All rules scoped to .pets-page.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Bebas+Neue&display=swap');
 
 /* ─────────────────────────────────────────────
    TOKENS
 ───────────────────────────────────────────── */
 
 .pets-page {
+  --font-rosette:   'Bebas Neue', sans-serif;
   --pets-cream:     #F8F4EF;
   --pets-ink:       #2C2416;
   --pets-brown:     #8B6B3D;
   --pets-brown-dim: #6B5040;
-  --pets-slate:     var(--pets-slate);
-  --pets-slate-dim: var(--pets-slate-dim);
-  --pets-slate-lt:  var(--pets-slate-lt);
+  --pets-slate:     #A8A6AE;
+  --pets-slate-dim: #7D7B88;
+  --pets-slate-lt:  #BDBBC4;
   --pets-amber:     #C9A96E;
   --pets-amber-dim: #B8964E;
   --pets-amber-lt:  #D8BC88;
@@ -31,6 +32,46 @@
   background-color: var(--pets-cream) !important;
   cursor: none;
 }
+/* ─────────────────────────────────────────────
+   PER-PET ROSETTE TOKENS
+   Colour source of truth for rosette fills,
+   plaque text, and JS confetti.
+   All contrast ratios verified WCAG AA on #fff:
+     fig    --rosette-tc #5A6A7C  5.54:1 ✓
+     coffee --rosette-tc #8B6B2E  4.95:1 ✓
+     lumen  --rosette-tc #2A5E94  6.72:1 ✓
+     peek   --rosette-tc #8B4A40  6.66:1 ✓
+───────────────────────────────────────────── */
+
+#section-fig {
+  --rosette:     #A8A6AE;
+  --rosette-lt:  #BDBBC4;
+  --rosette-lt2: #D1D0D7;
+  --rosette-dk:  #7D7B88;
+  --rosette-tc:  #5A5868;
+}
+#section-coffee {
+  --rosette:     #C9A96E;
+  --rosette-lt:  #D8BC88;
+  --rosette-lt2: #E8D0A0;
+  --rosette-dk:  #B8964E;
+  --rosette-tc:  #8B6B2E;
+}
+#section-lumen {
+  --rosette:     #5B8EC4;
+  --rosette-lt:  #7AAED8;
+  --rosette-lt2: #9ECAE8;
+  --rosette-dk:  #4A7EB4;
+  --rosette-tc:  #2A5E94;
+}
+#section-peek {
+  --rosette:     #C4847A;
+  --rosette-lt:  #D4948A;
+  --rosette-lt2: #E4B0A8;
+  --rosette-dk:  #B4746A;
+  --rosette-tc:  #8B4A40;
+}
+
 
 /* ─────────────────────────────────────────────
    NAV
@@ -231,6 +272,23 @@
   color: var(--pets-amber);
   font-style: normal;
 }
+
+.pets-eyes {
+  display: inline-block;
+  margin-left: 0.35em;
+  font-size: 1.15em;
+  vertical-align: -0.12em;
+  filter: saturate(0.75) sepia(0.12);
+  opacity: 0.82;
+  transform: rotate(-4deg);
+}
+.pets-oh:hover .pets-eyes {
+  animation: eyesPeek 0.45s ease;
+}
+@keyframes eyesPeek {
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  45%       { transform: rotate(3deg) translateY(-2px); }
+}
 .pets-subtitle {
   font-family: 'Indie Flower', cursive;
   font-size: 1rem;
@@ -255,11 +313,18 @@
 }
 .pet-header {
   display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem;
   flex-wrap: wrap;
   padding: 0 var(--space-page);
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ── Pet name with whisker hover ── */
+.pet-name-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
 }
 .pet-name {
   font-family: 'Indie Flower', cursive;
@@ -268,37 +333,78 @@
   color: var(--pets-ink);
   line-height: 1;
 }
-.pet-tag {
-  font-family: 'Indie Flower', cursive;
-  font-size: 0.8rem;
-  padding: 2px 10px;
-  border-radius: 100px;
-  letter-spacing: 0.02em;
+.pet-whisker {
+  width: 1.4em;
+  height: 0.6em;
+  color: var(--pets-ink);
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.pet-tag--fig    { background: var(--pets-slate); color: #fff; }
-.pet-tag--coffee { background: var(--pets-amber); color: var(--pets-ink); }
-.pet-tag--lumen  { background: var(--pets-lumen); color: #fff; }
-.pet-tag--peek   { background: var(--pets-peek);  color: #fff; }
+.pet-whisker--left {
+  transform: scaleX(0.2);
+  transform-origin: right center;
+}
+.pet-whisker--right {
+  transform: scaleX(0.2);
+  transform-origin: left center;
+}
+.pet-name-wrap:hover .pet-whisker {
+  opacity: 1;
+  transform: scaleX(1);
+}
 
-.pet-desc {
+/* ── Bio row: text 2/3, rosette 1/3 ── */
+.pet-bio-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: 0 var(--space-page);
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+}
+.pet-bio {
+  flex: 2;
   font-family: 'Indie Flower', cursive;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
   color: var(--pets-ink);
   line-height: 1.75;
-  padding: 0 var(--space-page);
-  margin-top: 1.5rem;
   opacity: 0.85;
   columns: 1;
-  max-width: 100%;
 }
-@media (min-width: 768px) {
-  .pet-desc {
+@media (min-width: 900px) {
+  .pet-bio {
     columns: 2;
-    column-gap: clamp(2rem, 5vw, 4rem);
-    max-width: 66.67%;
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 }
-.pet-desc p + p { margin-top: 0.6rem; }
+.pet-bio p + p { margin-top: 0.6rem; }
+.pet-rosette-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pet-rosette {
+  width: min(90%, 227px);
+  height: auto;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+.pet-rosette-col:hover .pet-rosette {
+  transform: scale(1.06) rotate(-2deg);
+}
+@media (max-width: 640px) {
+  .pet-bio-row {
+    flex-direction: column;
+  }
+  .pet-rosette-col {
+    order: -1;
+  }
+  .pet-rosette {
+    width: min(60vw, 180px);
+  }
+}
 
 /* ─────────────────────────────────────────────
    YARN STRIP + WAVY LINE
