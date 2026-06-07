@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node build.js)",
+      "Bash(which node *)",
+      "Read(//usr/local/bin/**)",
+      "Bash(~/.nvm/versions/node/v24.16.0/bin/node \"/Users/paulapersonal/Desktop/files/claude AI website/build.js\")"
+    ]
+  }
+}

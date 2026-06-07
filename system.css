@@ -234,12 +234,12 @@ img {
 }
 .heading-hero .hero-line-1 {
   display: block;
-  font-size: var(--size-hero-1);
+  font-size: var(--size-hero-2);
   letter-spacing: -0.02em;
 }
 .heading-hero .hero-line-2 {
   display: block;
-  font-size: var(--size-hero-2);
+  font-size: var(--size-hero-1);
   font-style: italic;
   color: var(--c-periwinkle);
   letter-spacing: -0.01em;
@@ -309,10 +309,14 @@ img {
   align-items: center;
   gap: 1.5rem;
   list-style: none;
-  flex-shrink: 0;
 }
 @media (min-width: 1024px) {
-  .nav-links { display: flex; }
+  .nav-links {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .nav-links a {

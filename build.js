@@ -11,6 +11,7 @@
  *   bodyClass   — class on <body> (optional)
  *   navCta      — true/false — show "Work with me" button in nav
  *   stickyCta   — "work-with-me" | "email" — mobile sticky bar variant
+ *   extraScript — filename of a page-specific JS file to defer-load (e.g. work.js)
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, existsSync } from 'fs';
@@ -19,7 +20,10 @@ import { join, basename } from 'path';
 const SRC       = './src';
 const PAGES     = join(SRC, 'pages');
 const PARTIALS  = join(SRC, 'partials');
-const DIST      = '.';
+const DIST      = './dist';
+
+// Ensure dist directory exists
+mkdirSync(DIST, { recursive: true });
 
 
 // ── Load partials ──────────────────────────────────────────────────────────
@@ -80,7 +84,8 @@ function buildPage(filename) {
     (meta.extraCss ? `  <link rel="stylesheet" href="${meta.extraCss}">\n` : '');
 
   const nav     = NAV_PARTIAL.replace('{{nav_cta}}', navCta);
-  const footer  = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta);
+  const footer  = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta) +
+    (meta.extraScript ? `\n  <script src="${meta.extraScript}" defer></script>` : '');
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -104,17 +109,20 @@ ${footer}
 
 console.log('\nwaralenda build\n');
 
-const pages = readdirSync(PAGES).filter(f => f.endsWith('.html') && f !== 'work.html');
+// Copy static assets to dist
+['system.css', 'system.js', 'work.css'].forEach(f => {
+  if (existsSync(`./${f}`)) {
+    copyFileSync(`./${f}`, join(DIST, f));
+    console.log(`  ✓ ${f} (copied)`);
+  }
+});
+
+const pages = readdirSync(PAGES).filter(f => f.endsWith('.html'));
 for (const page of pages) buildPage(page);
 
-// work.html and its script are managed at root (complex filter logic)
-if (existsSync('./work.html')) {
-  copyFileSync('./work.html', join(DIST, 'work.html'));
-  console.log('  ✓ work.html (copied from root)');
-}
 if (existsSync('./work.js')) {
   copyFileSync('./work.js', join(DIST, 'work.js'));
-  console.log('  ✓ work.js (copied from root)');
+  console.log('  ✓ work.js (copied)');
 }
 
 // pets.html is built separately (too large/complex for src/pages)
@@ -150,4 +158,4 @@ if (existsSync('./pets.css')) {
   console.log('  ✓ pets.css (copied from root)');
 }
 
-console.log(`\nBuilt ${pages.length + 1} pages → root\n`);
+console.log(`\nBuilt ${pages.length} pages → dist\n`);
