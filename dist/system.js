@@ -93,11 +93,19 @@ function showToast(msg, duration) {
 /* ── SCROLL LISTENERS ── */
 
 (function initScroll() {
-  const btn = document.getElementById('scrollTop');
-  const nav = document.querySelector('.site-nav');
+  const btn    = document.getElementById('scrollTop');
+  const nav    = document.querySelector('.site-nav');
+  const footer = document.querySelector('.site-footer');
+
   window.addEventListener('scroll', () => {
-    if (btn) btn.classList.toggle('visible', window.scrollY > 400);
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 8);
+    if (!btn) return;
+    btn.classList.toggle('visible', window.scrollY > 400);
+
+    if (footer) {
+      const overlap = window.innerHeight - footer.getBoundingClientRect().top;
+      btn.style.bottom = overlap > 0 ? (overlap + 16) + 'px' : '';
+    }
   }, { passive: true });
 })();
 
