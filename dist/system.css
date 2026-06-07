@@ -462,7 +462,7 @@ img {
 
 /* Light mode: show moon; dark mode: show sun */
 .theme-icon-light { display: none; }
-.theme-icon-dark  { display: block; }
+.theme-icon-dark  { display: block; position: relative; top: -2px; }
 [data-theme="dark"] .theme-icon-light { display: block; }
 [data-theme="dark"] .theme-icon-dark  { display: none; }
 
@@ -1553,7 +1553,7 @@ img {
 @media (min-width: 640px) {
   .services-cta {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
     gap: var(--space-xl);
   }
@@ -1564,7 +1564,6 @@ img {
   color: var(--c-text-secondary);
   line-height: 1.65;
   max-width: 420px;
-  padding-bottom: 2rem;
 }
 
 .services-cta-btn {

@@ -5,8 +5,7 @@
   let lastX = -999, lastY = -999;
   document.addEventListener('mousemove', e => {
     if (!cursor) return;
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
+    cursor.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 14}px)`;
     const dx = e.clientX - lastX, dy = e.clientY - lastY;
     if (Math.sqrt(dx*dx + dy*dy) < 38) return;
     lastX = e.clientX; lastY = e.clientY;

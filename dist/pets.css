@@ -32,6 +32,7 @@
   background-color: var(--pets-cream) !important;
   cursor: none;
 }
+.pets-page * { cursor: none !important; }
 /* ─────────────────────────────────────────────
    PER-PET ROSETTE TOKENS
    Colour source of truth for rosette fills,
@@ -178,7 +179,7 @@
   width: 28px; height: 28px;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
+  will-change: transform;
 }
 .paw-trail {
   position: fixed;
