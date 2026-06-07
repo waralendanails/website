@@ -458,21 +458,21 @@ img {
   color: var(--c-text-secondary);
   cursor: pointer;
   border-radius: var(--radius-sm);
-  transition: color var(--transition);
+  transition: color var(--transition), filter var(--transition), transform var(--transition);
 }
 .theme-btn svg { width: 17px; height: 17px; }
 .theme-icon-dark { stroke-width: 1.25; }
-.theme-btn:hover { color: var(--c-text-primary); }
+.theme-btn:hover { color: var(--c-text-primary); filter: brightness(1.4); transform: scale(1.15); }
 .nav-ig {
   color: var(--c-text-secondary);
   display: inline-flex;
   align-items: center;
   min-height: var(--touch-min);
   padding: 0 0.25rem;
-  transition: color var(--transition);
+  transition: color var(--transition), filter var(--transition), transform var(--transition);
   text-decoration: none;
 }
-.nav-ig:hover { color: var(--c-periwinkle); }
+.nav-ig:hover { color: var(--c-periwinkle); filter: brightness(1.4); transform: scale(1.15); }
 
 /* Light mode: show moon; dark mode: show sun */
 .theme-icon-light { display: none; }
@@ -1202,9 +1202,23 @@ img {
   min-height: var(--touch-min);
   display: inline-flex;
   align-items: center;
-  transition: color var(--transition);
+  transition: color var(--transition), transform var(--transition), text-decoration-color var(--transition);
 }
-.footer-links a:hover { color: var(--c-periwinkle); }
+.footer-links a:not(.ig-icon):hover {
+  color: var(--c-periwinkle);
+  text-decoration: underline;
+  text-decoration-color: var(--c-periwinkle);
+  text-underline-offset: 3px;
+  transform: scale(1.08);
+}
+.footer-links .ig-icon {
+  transition: color var(--transition), filter var(--transition), transform var(--transition);
+}
+.footer-links .ig-icon:hover {
+  color: var(--c-periwinkle);
+  filter: brightness(1.4);
+  transform: scale(1.15);
+}
 .footer-links .ig-icon svg {
   width: 15px;
   height: 15px;
@@ -1408,12 +1422,17 @@ img {
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 300;
   color: var(--c-text-primary);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--c-ui);
+  text-underline-offset: 6px;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  transition: color var(--transition);
+  transition: color var(--transition), text-decoration-color var(--transition);
 }
-.contact-method-link:hover { color: var(--c-periwinkle); }
+.contact-method-link:hover {
+  color: var(--c-periwinkle);
+  text-decoration-color: var(--c-periwinkle);
+}
 
 .contact-method-note {
   font-size: var(--size-sm);
