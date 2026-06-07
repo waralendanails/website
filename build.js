@@ -3,7 +3,7 @@
  *
  * Assembles final HTML pages from partials + page sources.
  * Run: node build.js
- * Output: /dist (ready to deploy)
+ * Output: /dist (ready to deploy or preview locally)
  *
  * Page front-matter (HTML comment at top of each src/pages/*.html):
  *   title       — <title> tag
@@ -13,20 +13,14 @@
  *   stickyCta   — "work-with-me" | "email" — mobile sticky bar variant
  */
 
-import {
-  readFileSync, writeFileSync, mkdirSync,
-  readdirSync, copyFileSync, existsSync, cpSync
-} from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, existsSync } from 'fs';
+import { join, basename } from 'path';
 
-const SRC      = './src';
-const PAGES    = join(SRC, 'pages');
-const PARTIALS = join(SRC, 'partials');
-const DIST     = './dist';
+const SRC       = './src';
+const PAGES     = join(SRC, 'pages');
+const PARTIALS  = join(SRC, 'partials');
+const DIST      = '.';
 
-// ── Ensure dist exists ─────────────────────────────────────────────────────
-
-mkdirSync(DIST, { recursive: true });
 
 // ── Load partials ──────────────────────────────────────────────────────────
 
@@ -70,22 +64,23 @@ function parseFrontMatter(src) {
   return { meta, body };
 }
 
-// ── Build a single templated page ──────────────────────────────────────────
+// ── Build a single page ────────────────────────────────────────────────────
 
 function buildPage(filename) {
   const src = readFileSync(join(PAGES, filename), 'utf8');
   const { meta, body } = parseFrontMatter(src);
 
-  const navCta    = meta.navCta === 'true' ? NAV_CTA_HTML : '';
+  const navCta   = meta.navCta === 'true' ? NAV_CTA_HTML : '';
   const stickyCta = STICKY_CTA[meta.stickyCta] || STICKY_CTA['work-with-me'];
   const bodyClass = meta.bodyClass ? ` class="${meta.bodyClass}"` : '';
 
-  const head   = HEAD_PARTIAL
+  const head    = HEAD_PARTIAL
     .replace('{{description}}', meta.description || '')
-    .replace('{{title}}', meta.title || 'waralenda');
+    .replace('{{title}}', meta.title || 'waralenda') +
+    (meta.extraCss ? `  <link rel="stylesheet" href="${meta.extraCss}">\n` : '');
 
-  const nav    = NAV_PARTIAL.replace('{{nav_cta}}', navCta);
-  const footer = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta);
+  const nav     = NAV_PARTIAL.replace('{{nav_cta}}', navCta);
+  const footer  = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -105,54 +100,54 @@ ${footer}
   console.log(`  ✓ ${filename}`);
 }
 
-// ── Copy a static file ─────────────────────────────────────────────────────
-
-function copyStatic(src, dest) {
-  if (existsSync(src)) {
-    copyFileSync(src, dest);
-    console.log(`  ✓ ${dest.replace(DIST + '/', '')} (static copy)`);
-  } else {
-    console.warn(`  ⚠ not found, skipped: ${src}`);
-  }
-}
-
-// ── Copy a whole directory ─────────────────────────────────────────────────
-
-function copyDir(src, dest) {
-  if (existsSync(src)) {
-    cpSync(src, dest, { recursive: true });
-    console.log(`  ✓ ${src}/ → dist/`);
-  } else {
-    console.warn(`  ⚠ directory not found, skipped: ${src}`);
-  }
-}
-
 // ── Build all pages ────────────────────────────────────────────────────────
 
 console.log('\nwaralenda build\n');
 
-// Templated pages (use partials + front-matter)
-const templatedPages = readdirSync(PAGES)
-  .filter(f => f.endsWith('.html') && f !== 'work.html' && f !== 'pets.html');
+const pages = readdirSync(PAGES).filter(f => f.endsWith('.html') && f !== 'work.html');
+for (const page of pages) buildPage(page);
 
-for (const page of templatedPages) buildPage(page);
+// work.html and its script are managed at root (complex filter logic)
+if (existsSync('./work.html')) {
+  copyFileSync('./work.html', join(DIST, 'work.html'));
+  console.log('  ✓ work.html (copied from root)');
+}
+if (existsSync('./work.js')) {
+  copyFileSync('./work.js', join(DIST, 'work.js'));
+  console.log('  ✓ work.js (copied from root)');
+}
 
-// Static HTML pages (self-contained, just copy across)
-copyStatic(join(PAGES, 'work.html'),  join(DIST, 'work.html'));
-copyStatic(join(PAGES, 'pets.html'),  join(DIST, 'pets.html'));
+// pets.html is built separately (too large/complex for src/pages)
+if (existsSync('./src/pages/pets.html')) {
+  buildPage('pets.html');
+} else if (existsSync('./pets.html')) {
+  // Fallback: assemble pets.html from root using front matter
+  const src = readFileSync('./pets.html', 'utf8');
+  const { meta, body } = parseFrontMatter(src);
+  const navCta    = meta.navCta === 'true' ? NAV_CTA_HTML : '';
+  const stickyCta = STICKY_CTA[meta.stickyCta] || STICKY_CTA['work-with-me'];
+  const bodyClass = meta.bodyClass ? ` class="${meta.bodyClass}"` : '';
+  const head = HEAD_PARTIAL
+    .replace('{{description}}', meta.description || '')
+    .replace('{{title}}', meta.title || 'waralenda') +
+    (meta.extraCss ? `  <link rel="stylesheet" href="${meta.extraCss}">\n` : '');
+  const nav    = NAV_PARTIAL.replace('{{nav_cta}}', navCta);
+  const footer = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta);
+  const html = `<!DOCTYPE html>\n<html lang="en">\n<head>\n${head}\n</head>\n<body${bodyClass}>\n\n${nav}\n${body}\n\n${footer}\n</body>\n</html>`;
+  writeFileSync(join(DIST, 'pets.html'), html);
+  console.log('  ✓ pets.html (built from root)');
+}
 
-// JS files
-copyStatic('./system.js', join(DIST, 'system.js'));
-copyStatic('./work.js',   join(DIST, 'work.js'));
-copyStatic('./pets.js',   join(DIST, 'pets.js'));
+// pets.js is the pets page script, lives alongside pets.html
+if (existsSync('./pets.js')) {
+  copyFileSync('./pets.js', join(DIST, 'pets.js'));
+  console.log('  ✓ pets.js (copied from root)');
+}
 
-// CSS files
-copyStatic('./system.css', join(DIST, 'system.css'));
-copyStatic('./pets.css',   join(DIST, 'pets.css'));
+// pets.css is the pets page stylesheet, lives alongside system.css
+if (existsSync('./pets.css')) {
+  copyFileSync('./pets.css', join(DIST, 'pets.css'));
+  console.log('  ✓ pets.css (copied from root)');
+}
 
-// Asset directories
-copyDir('./assets', join(DIST, 'assets'));
-copyDir('./fonts',  join(DIST, 'fonts'));
-
-const total = templatedPages.length + 2; // +2 for work + pets
-console.log(`\nBuilt ${total} pages → dist/\n`);
+console.log(`\nBuilt ${pages.length + 1} pages → root\n`);
