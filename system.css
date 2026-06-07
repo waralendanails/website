@@ -1948,15 +1948,18 @@ img {
 }
 
 /* Pets link */
+.about-pets p { margin-bottom: 0; }
+.about-pets { gap: var(--space-xs); }
 .about-pets-link {
+  display: block;
+  text-align: center;
+  margin-top: var(--space-xs);
   color: var(--c-periwinkle);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition);
+  transition: opacity var(--transition);
 }
 .about-pets-link:hover {
-  border-bottom-color: var(--c-periwinkle);
-  color: var(--c-periwinkle);
+  opacity: 0.7;
 }
 
 
