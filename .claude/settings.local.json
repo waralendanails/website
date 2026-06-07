@@ -8,7 +8,8 @@
       "Bash(node --version)",
       "Bash(npx --version)",
       "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node)",
-      "Bash(~/.nvm/versions/node/v24.16.0/bin/node build.js)"
+      "Bash(~/.nvm/versions/node/v24.16.0/bin/node build.js)",
+      "Read(//opt/homebrew/bin/**)"
     ]
   }
 }
