@@ -135,6 +135,12 @@
 .pets-page .theme-btn:hover {
   color: var(--pets-ink);
 }
+.pets-page .nav-ig {
+  color: var(--pets-brown);
+}
+.pets-page .nav-ig:hover {
+  color: var(--pets-ink);
+}
 
 /* ─────────────────────────────────────────────
    FOOTER

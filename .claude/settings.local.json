@@ -4,7 +4,11 @@
       "Bash(node build.js)",
       "Bash(which node *)",
       "Read(//usr/local/bin/**)",
-      "Bash(~/.nvm/versions/node/v24.16.0/bin/node \"/Users/paulapersonal/Desktop/files/claude AI website/build.js\")"
+      "Bash(~/.nvm/versions/node/v24.16.0/bin/node \"/Users/paulapersonal/Desktop/files/claude AI website/build.js\")",
+      "Bash(node --version)",
+      "Bash(npx --version)",
+      "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node)",
+      "Bash(~/.nvm/versions/node/v24.16.0/bin/node build.js)"
     ]
   }
 }
