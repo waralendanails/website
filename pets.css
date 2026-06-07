@@ -112,7 +112,13 @@
 }
 .pets-page .nav-links a.active {
   color: var(--pets-ink);
-  border-bottom-color: var(--pets-brown);
+}
+.pets-page .nav-links a::after {
+  background: var(--pets-brown);
+}
+.pets-page .nav-links a.nav-visited,
+[data-theme="dark"] .pets-page .nav-links a.nav-visited {
+  color: var(--pets-brown-dim);
 }
 .pets-page .nav-hamburger span {
   background: var(--pets-brown);
