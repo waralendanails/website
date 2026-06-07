@@ -1,25 +1,26 @@
 (function initPets() {
 
-  /* ── Paw cursor ── */
+  /* ── Paw cursor (mouse only) ── */
   const cursor = document.getElementById('pawCursor');
-  let lastX = -999, lastY = -999;
-  document.addEventListener('mousemove', e => {
-    if (!cursor) return;
-    cursor.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 14}px)`;
-    const dx = e.clientX - lastX, dy = e.clientY - lastY;
-    if (Math.sqrt(dx*dx + dy*dy) < 38) return;
-    lastX = e.clientX; lastY = e.clientY;
-    const paw = document.createElement('span');
-    paw.className = 'paw-trail';
-    paw.textContent = '🐾';
-    paw.style.left = e.clientX + 'px';
-    paw.style.top  = e.clientY + 'px';
-    paw.style.fontSize = (11 + Math.random() * 7) + 'px';
-    document.body.appendChild(paw);
-    paw.addEventListener('animationend', () => paw.remove());
-  }, { passive: true });
-  document.addEventListener('mouseleave', () => { if (cursor) cursor.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { if (cursor) cursor.style.opacity = '1'; });
+  if (cursor && window.matchMedia('(pointer: fine)').matches) {
+    let lastX = -999, lastY = -999;
+    document.addEventListener('mousemove', e => {
+      cursor.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 14}px)`;
+      const dx = e.clientX - lastX, dy = e.clientY - lastY;
+      if (Math.sqrt(dx*dx + dy*dy) < 38) return;
+      lastX = e.clientX; lastY = e.clientY;
+      const paw = document.createElement('span');
+      paw.className = 'paw-trail';
+      paw.textContent = '🐾';
+      paw.style.left = e.clientX + 'px';
+      paw.style.top  = e.clientY + 'px';
+      paw.style.fontSize = (11 + Math.random() * 7) + 'px';
+      document.body.appendChild(paw);
+      paw.addEventListener('animationend', () => paw.remove());
+    }, { passive: true });
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+  }
 
   /* ── Keyboard boop ── */
   document.querySelectorAll('.polaroid').forEach(p => {

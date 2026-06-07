@@ -173,6 +173,10 @@
    CURSOR
 ───────────────────────────────────────────── */
 
+@media (pointer: coarse) {
+  .pets-page, .pets-page * { cursor: auto !important; }
+  #pawCursor { display: none !important; }
+}
 #pawCursor {
   position: fixed;
   top: 0; left: 0;
