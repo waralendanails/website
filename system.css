@@ -437,7 +437,8 @@ img {
     min-height: 34px;
     position: relative;
     overflow: visible;
-    transition: background-color var(--transition), border-color var(--transition);
+    transform-origin: left center;
+    transition: filter var(--transition), transform var(--transition);
   }
 }
 /* Theme toggle */
@@ -540,11 +541,18 @@ img {
   min-height: var(--touch-min);
   position: relative;
   overflow: visible;
-  transition: opacity var(--transition);
+  transition: filter var(--transition), letter-spacing var(--transition);
 }
 .btn-dark:hover,
 .nav-cta:hover {
   color: var(--c-btn-text);
+  filter: brightness(1.45);
+}
+.nav-cta:hover {
+  transform: scaleX(1.08);
+}
+.btn-dark:hover {
+  letter-spacing: 0.18em;
 }
 
 /* Filled — all CTAs */
@@ -578,42 +586,14 @@ img {
   align-items: center;
   gap: 0.5rem;
 }
-/* Underline fades in after sweep completes */
-.btn-holo-content::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.holo-glow .btn-holo-content::after {
-  opacity: 1;
-}
-.holo-glow {
-  background: #51294D;
-  border-color: #51294D;
-  color: #F1F1F5;
-}
-[data-theme="dark"] .holo-glow {
-  background: #6B3568;
-  border-color: #6B3568;
-  color: #F1F1F5;
-}
-[data-theme="dark"] .holo-glow {
-  background: #6B3568;
-  border-color: #6B3568;
-  color: #F1F1F5;
-}
+
 /* Rainbow band that sweeps across */
 .btn-holo-shine {
   position: absolute;
   top: 0;
   bottom: 0;
   left: -320px;
+  opacity: 0;
   width: 300px;
   background: linear-gradient(90deg,
     transparent 0%,
@@ -628,6 +608,12 @@ img {
   );
   z-index: 1;
   pointer-events: none;
+}
+
+/* Hover: brighten + letter-spacing expand. Active: squish. */
+.btn-dark:active,
+.nav-cta:active {
+  transform: scale(0.96);
 }
 
 /* Underline border reset for dark buttons and nav-cta */

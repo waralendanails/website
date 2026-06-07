@@ -9,7 +9,9 @@
       "Bash(npx --version)",
       "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node)",
       "Bash(~/.nvm/versions/node/v24.16.0/bin/node build.js)",
-      "Read(//opt/homebrew/bin/**)"
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(mv \"/Users/paulapersonal/Desktop/files/claude AI website\" \"/Users/paulapersonal/Desktop/files/waralenda.com\")",
+      "Read(//Users/paulapersonal/Desktop/files/**)"
     ]
   }
 }

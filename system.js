@@ -211,20 +211,21 @@ function updateFilterBadge() {
     btn.addEventListener('mouseenter', () => {
       const w = btn.offsetWidth;
       shine.style.transition = 'none';
-      shine.style.left = '-320px';
+      shine.style.left = '-40px';
+      shine.style.opacity = '0';
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          shine.style.transition = 'left 0.6s cubic-bezier(0.25,0,0.5,1)';
+          shine.style.transition = 'left 0.55s cubic-bezier(0.25,0,0.5,1), opacity 0.12s ease';
           shine.style.left = (w + 60) + 'px';
+          shine.style.opacity = '1';
         });
       });
-      setTimeout(() => btn.classList.add('holo-glow'), 300);
     });
 
     btn.addEventListener('mouseleave', () => {
       shine.style.transition = 'none';
       shine.style.left = '-320px';
-      btn.classList.remove('holo-glow');
+      shine.style.opacity = '0';
     });
   }
 
