@@ -330,8 +330,8 @@ img {
   border-bottom: 1px solid transparent;
   transition: color var(--transition), border-color var(--transition);
 }
-.nav-links a:visited { color: #48485E; }
-[data-theme="dark"] .nav-links a:visited { color: #A8A8C0; }
+.nav-links a.nav-visited { color: #48485E; }
+[data-theme="dark"] .nav-links a.nav-visited { color: #A8A8C0; }
 .nav-links a:hover { color: var(--c-text-primary); border-bottom-color: var(--c-ui); }
 .nav-links a.active {
   color: var(--c-text-primary);

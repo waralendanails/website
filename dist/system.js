@@ -170,12 +170,21 @@ function updateFilterBadge() {
 })();
 
 
-/* ── ACTIVE NAV LINK ── */
+/* ── ACTIVE NAV LINK + VISITED TRACKING ── */
 
 (function setActiveNav() {
-  const page = window.location.pathname.split('/').pop() || 'index.html';
+  const raw  = window.location.pathname.split('/').pop().replace('.html', '');
+  const page = raw || 'index';
+
   document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
-    if (a.getAttribute('href') === page) a.classList.add('active');
+    const href = a.getAttribute('href').replace('.html', '') || 'index';
+
+    // Active: current page
+    if (href === page) a.classList.add('active');
+
+    // Visited: persisted via localStorage
+    if (localStorage.getItem('nav_visited_' + href)) a.classList.add('nav-visited');
+    a.addEventListener('click', () => localStorage.setItem('nav_visited_' + href, '1'));
   });
 })();
 
