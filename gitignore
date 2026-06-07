@@ -1,0 +1,15 @@
+# Build output — Netlify runs the build, so dist/ is not committed
+dist/
+
+# Old stale build directories
+mnt/
+
+# Node
+node_modules/
+
+# Mac cruft
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

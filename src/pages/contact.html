@@ -1,0 +1,64 @@
+<!--
+title: Contact — waralenda
+description: Get in touch with waralenda for swatch photography, nail art and branded content collaborations.
+bodyClass: 
+navCta: false
+stickyCta: email
+-->
+
+<main>
+  <div class="contact-layout">
+
+    <header class="contact-header">
+      <span class="eyebrow">Work with me</span>
+      <h1 class="heading-page">Your story,<br><span class="accent">visualised.</span></h1>
+    </header>
+
+    <div class="contact-body">
+      <p class="contact-intro">
+        Whether you're just starting out or have a long history, I'd love to hear from you.<br><br>
+        Note: I work exclusively with <strong>vegan &amp; cruelty-free</strong> brands.
+      </p>
+
+      <div class="contact-methods">
+
+        <div class="contact-method">
+          <span class="contact-method-label">Email</span>
+          <a class="contact-method-link" id="contactEmail" href="#" aria-label="Send email to waralenda"></a>
+          <span class="contact-method-note">The best place to start — I reply within 48 hours</span>
+        </div>
+
+        <div class="contact-method">
+          <span class="contact-method-label">Instagram</span>
+          <a class="contact-method-link"
+             href="https://instagram.com/waralenda_nails"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="DM waralenda on Instagram">
+            @waralenda_nails
+          </a>
+          <span class="contact-method-note">For a more casual conversation</span>
+        </div>
+
+      </div>
+
+      <p class="contact-footer-note">
+        No formal brief needed — a few lines about your brand and what you're looking for is plenty to get started.
+      </p>
+
+    </div>
+
+  </div>
+</main>
+
+<script>
+  (function assembleEmail() {
+    const parts = ['contact', '\u0040', 'waralenda', '\u002E', 'com'];
+    const addr  = parts.join('');
+    const href  = 'mail' + 'to:' + addr;
+    const link  = document.getElementById('contactEmail');
+    if (link) { link.href = href; link.textContent = addr; }
+    const cta = document.getElementById('ctaMobileEmail');
+    if (cta) cta.href = href;
+  })();
+</script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Waralenda — nail artist and content creator. Swatch photography, nail art and branded content for vegan and cruelty-free polish brands.">
+  <title>waralenda — nail art & content creation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="system.css">
+
+</head>
+<body class="homepage">
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="waralenda home">
+      wara<span class="accent">lenda</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Commissions</a></li>
+      <li><a href="stats.html">Stats</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-toggle" aria-label="Toggle colour theme">
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme">
+          <svg class="theme-icon theme-icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="8" cy="8" r="3"/>
+            <line x1="8" y1="1" x2="8" y2="2.5"/><line x1="8" y1="13.5" x2="8" y2="15"/>
+            <line x1="1" y1="8" x2="2.5" y2="8"/><line x1="13.5" y1="8" x2="15" y2="8"/>
+            <line x1="3" y1="3" x2="4.1" y2="4.1"/><line x1="11.9" y1="11.9" x2="13" y2="13"/>
+            <line x1="3" y1="13" x2="4.1" y2="11.9"/><line x1="11.9" y1="4.1" x2="13" y2="3"/>
+          </svg>
+          <svg class="theme-icon theme-icon-dark" width="15" height="15" viewBox="-2 -2 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M13.5 10.5A7 7 0 015.5 2.5a7 7 0 108 8z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <button class="nav-hamburger" id="navBurger" onclick="toggleMobile()"
+        aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="work.html" onclick="closeMobile()">Work</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="services.html" onclick="closeMobile()">Commissions</a>
+    <a href="stats.html" onclick="closeMobile()">Stats</a>
+    <a href="contact.html" onclick="closeMobile()">Contact</a>
+  </nav>
+
+  <div class="nav-spacer"></div>
+
+<main>
+  <div class="hero-grid">
+
+    <div class="hero-peek" aria-label="Portfolio preview" role="img">
+      <div class="hero-peek-cell"><img src="assets/image9.jpg"  alt="Flakie swatch" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image2.jpg"  alt="Stamping neon nail art" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image13.png" alt="Chrome holo swatch" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image4.jpg"  alt="Skittle gradient reflective nail art" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image11.jpg" alt="Magnetic flakie swatch" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image28.jpg" alt="Gradient skittle jelly topper nail art" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image43.jpg" alt="Cream swatch" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image5.jpg"  alt="Watermarble skittle cream topper nail art" loading="lazy"></div>
+      <div class="hero-peek-cell"><img src="assets/image30.jpg" alt="Holo shimmer swatch" loading="lazy"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-headline">
+        <span class="eyebrow hero-eyebrow">Nail artist &amp; content creator</span>
+        <h1 class="heading-hero">
+          <span class="hero-line-1">My nails,</span>
+          <span class="hero-line-2">your story.</span>
+        </h1>
+      </div>
+      <div class="hero-bottom">
+        <p class="hero-sub">Swatch photography, nail art &amp; branded content.</p>
+        <div class="hero-credentials">
+          <span class="hero-credential-item">Oxford, UK</span>
+          <span class="hero-credential-sep" aria-hidden="true">·</span>
+          <span class="hero-credential-item">Vegan &amp; cruelty-free</span>
+        </div>
+        <a href="contact.html" class="btn-dark btn-lg hero-cta" id="heroCta">
+          Work with me
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="nine-grid" aria-label="Selected work" role="img">
+      <div class="nine-cell"><img src="assets/image9.jpg"  alt="Flakie swatch" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image2.jpg"  alt="Stamping neon nail art" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image13.png" alt="Chrome holo swatch" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image4.jpg"  alt="Skittle gradient reflective nail art" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image11.jpg" alt="Magnetic flakie swatch" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image28.jpg" alt="Gradient skittle jelly topper nail art" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image43.jpg" alt="Cream swatch" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image5.jpg"  alt="Watermarble skittle cream topper nail art" loading="lazy"></div>
+      <div class="nine-cell"><img src="assets/image30.jpg" alt="Holo shimmer swatch" loading="lazy"></div>
+    </div>
+
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <span>© 2026 waralenda</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Commissions</a>
+      <a href="stats.html">Stats</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://instagram.com/waralenda_nails" target="_blank" rel="noopener noreferrer" class="ig-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </nav>
+  </footer>
+
+  
+  <div class="sticky-cta" role="complementary" aria-label="Contact">
+    <a href="contact.html">Work with me <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+  </div>
+
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="system.js"></script>
+
+</body>
+</html>

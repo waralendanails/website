@@ -1,0 +1,45 @@
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="waralenda home">
+      wara<span class="accent">lenda</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Commissions</a></li>
+      <li><a href="stats.html">Stats</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-toggle" aria-label="Toggle colour theme">
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme">
+          <svg class="theme-icon theme-icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="8" cy="8" r="3"/>
+            <line x1="8" y1="1" x2="8" y2="2.5"/><line x1="8" y1="13.5" x2="8" y2="15"/>
+            <line x1="1" y1="8" x2="2.5" y2="8"/><line x1="13.5" y1="8" x2="15" y2="8"/>
+            <line x1="3" y1="3" x2="4.1" y2="4.1"/><line x1="11.9" y1="11.9" x2="13" y2="13"/>
+            <line x1="3" y1="13" x2="4.1" y2="11.9"/><line x1="11.9" y1="4.1" x2="13" y2="3"/>
+          </svg>
+          <svg class="theme-icon theme-icon-dark" width="15" height="15" viewBox="-2 -2 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M13.5 10.5A7 7 0 015.5 2.5a7 7 0 108 8z"/>
+          </svg>
+        </button>
+      </div>
+      {{nav_cta}}
+      <button class="nav-hamburger" id="navBurger" onclick="toggleMobile()"
+        aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="work.html" onclick="closeMobile()">Work</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="services.html" onclick="closeMobile()">Commissions</a>
+    <a href="stats.html" onclick="closeMobile()">Stats</a>
+    <a href="contact.html" onclick="closeMobile()">Contact</a>
+  </nav>
+
+  <div class="nav-spacer"></div>
