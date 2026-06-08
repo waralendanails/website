@@ -304,6 +304,7 @@ img {
 }
 @media (min-width: 1024px) {
   .nav-logo-svg { height: 21px; }
+  .site-nav { padding-left: 1rem; }
 }
 .nav-logo:hover { opacity: 0.75; color: var(--c-text-primary); }
 
