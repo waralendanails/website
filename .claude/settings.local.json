@@ -11,7 +11,10 @@
       "Bash(~/.nvm/versions/node/v24.16.0/bin/node build.js)",
       "Read(//opt/homebrew/bin/**)",
       "Bash(mv \"/Users/paulapersonal/Desktop/files/claude AI website\" \"/Users/paulapersonal/Desktop/files/waralenda.com\")",
-      "Read(//Users/paulapersonal/Desktop/files/**)"
+      "Read(//Users/paulapersonal/Desktop/files/**)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
