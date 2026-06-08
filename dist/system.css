@@ -1451,6 +1451,18 @@ img {
   font-weight: 500;
 }
 
+.contact-secondary-cta {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.contact-secondary-cta-text {
+  font-size: var(--size-sm);
+  color: var(--c-text-tertiary);
+}
+
 
 /* ─────────────────────────────────────────────
    25. SERVICES PAGE
@@ -1573,7 +1585,7 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--space-xl);
+    gap: clamp(3rem, 8vw, 6rem);
   }
 }
 
@@ -1582,11 +1594,13 @@ img {
   color: var(--c-text-secondary);
   line-height: 1.65;
   max-width: 420px;
+  text-align: justify;
 }
 
 .commissions-cta-btn {
   flex-shrink: 0;
   white-space: nowrap;
+  align-self: center;
 }
 
 /* ─────────────────────────────────────────────
@@ -1683,7 +1697,7 @@ img {
 }
 @media (min-width: 768px) {
   .stats-secondary {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1825,11 +1839,30 @@ img {
 
 /* CTA */
 .stats-cta {
-  padding: clamp(3rem, 7vw, 5rem) var(--space-page) clamp(5rem, 12vw, 9rem);
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(5rem, 12vw, 9rem);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .stats-cta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.stats-cta-half {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
   align-items: flex-start;
+  padding: clamp(2rem, 5vw, 3rem) var(--space-page);
+}
+.stats-cta-half--secondary {
+  border-top: 1px solid var(--c-border);
+}
+@media (min-width: 640px) {
+  .stats-cta-half--secondary {
+    border-top: none;
+    border-left: 1px solid var(--c-border);
+  }
 }
 
 .stats-cta-text {
