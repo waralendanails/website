@@ -173,7 +173,7 @@ function updateFilterBadge() {
 /* ── ACTIVE NAV LINK + VISITED TRACKING ── */
 
 (function setActiveNav() {
-  const raw  = window.location.pathname.split('/').pop().replace('.html', '');
+  const raw  = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
   const page = raw || 'index';
 
   document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
