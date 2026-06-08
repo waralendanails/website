@@ -1562,7 +1562,7 @@ img {
 
 /* Brands */
 .commissions-brands {
-  padding: clamp(5rem, 10vw, 8rem) var(--space-page) clamp(2rem, 4vw, 3rem);
+  padding: clamp(3rem, 6vw, 4.5rem) var(--space-page) clamp(3rem, 6vw, 4.5rem);
 }
 
 .commissions-brands-label {
@@ -1598,14 +1598,27 @@ img {
 
 /* Testimonials */
 .testimonials {
-  padding: clamp(3rem, 7vw, 5rem) var(--space-page);
+  padding: clamp(2rem, 4vw, 3rem) var(--space-page) clamp(3rem, 6vw, 4.5rem);
   border-top: 1px solid var(--c-border);
 }
 
 .testimonial {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 1.75rem;
+  align-items: start;
+  max-width: 720px;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-style: italic;
+  line-height: 0.8;
+  color: var(--c-periwinkle);
+  user-select: none;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
 }
 
 .testimonial-quote {
@@ -1649,7 +1662,7 @@ img {
   color: var(--c-text-secondary);
   line-height: 1.65;
   max-width: 420px;
-  text-align: justify;
+  text-align: left;
 }
 
 .commissions-cta-btn {
