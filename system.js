@@ -172,17 +172,9 @@ function updateFilterBadge() {
 
 /* ── ACTIVE NAV LINK + VISITED TRACKING ── */
 
-(function setActiveNav() {
-  const raw  = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
-  const page = raw || 'index';
-
+(function initNav() {
   document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
     const href = a.getAttribute('href').replace('.html', '') || 'index';
-
-    // Active: current page
-    if (href === page) a.classList.add('active');
-
-    // Visited: persisted via localStorage
     if (localStorage.getItem('nav_visited_' + href)) a.classList.add('nav-visited');
     a.addEventListener('click', () => localStorage.setItem('nav_visited_' + href, '1'));
   });

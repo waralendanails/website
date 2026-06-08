@@ -91,7 +91,9 @@ function buildPage(filename) {
     .replace('{{title}}', meta.title || 'waralenda') +
     (meta.extraCss ? `  <link rel="stylesheet" href="${meta.extraCss}">\n` : '');
 
-  const nav     = NAV_PARTIAL.replace('{{nav_cta}}', navCta);
+  const nav     = NAV_PARTIAL
+    .replace('{{nav_cta}}', navCta)
+    .replace(`href="${filename}"`, `href="${filename}" class="active" aria-current="page"`);
   const footer  = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta) +
     (meta.extraScript ? `\n  <script src="${meta.extraScript}" defer></script>` : '');
 
