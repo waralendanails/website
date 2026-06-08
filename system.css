@@ -858,21 +858,21 @@ img {
 
 .filter-pill {
   font-family: var(--font-body);
-  font-size: var(--size-sm);
+  font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background: transparent;
   color: var(--c-text-primary);
   border: 1px solid var(--c-ui);
-  padding: 0.35rem 0.5rem;
+  padding: 0.25rem 0.45rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
   line-height: 1;
   user-select: none;
   white-space: nowrap;
   min-height: var(--touch-min);
-  min-width: 72px;
+  min-width: 60px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -922,13 +922,25 @@ img {
   gap: 0.4rem;
   flex: 1;
 }
+/* Format row: 2-column on mobile so all 4 sit evenly */
+@media (max-width: 1023px) {
+  .filter-format-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-format-group .filter-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
 .filter-pill-group::-webkit-scrollbar { display: none; }
 
 @media (min-width: 1024px) {
   .filter-pill {
     white-space: nowrap;
     letter-spacing: 0.09em;
-    padding: 0.35rem 0.7rem;
+    padding: 0.2rem 0.55rem;
+    min-height: 32px;
+    min-width: 80px;
   }
   .filter-row {
     padding: 0.6rem var(--space-page);
@@ -1009,10 +1021,11 @@ img {
   cursor: pointer;
   text-decoration: underline;
   min-height: var(--touch-min);
-  display: flex;
+  display: none;
   align-items: center;
   transition: color var(--transition);
 }
+.filter-count-reset.visible { display: flex; }
 .filter-count-reset:hover { color: var(--c-periwinkle); }
 
 
@@ -1067,14 +1080,14 @@ img {
 
 .tag {
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.42rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: inline-block;
   max-width: calc(50% - 0.6rem);
   overflow-wrap: break-word;
 }
-@media (min-width: 768px) { .tag { font-size: 0.55rem; } }
+@media (min-width: 768px) { .tag { font-size: 0.48rem; } }
 /* inner span: per-line background via box-decoration-break */
 .tag-bg {
   display: inline;

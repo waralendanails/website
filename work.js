@@ -58,6 +58,12 @@
       applyFilters();
     }
 
+    /* ── CLEAR BUTTON VISIBILITY ── */
+    function updateClearButton() {
+      const hasFilters = currentFormat !== 'all' || activeStyles.size > 0 || activeFinishes.size > 0;
+      document.querySelector('.filter-count-reset').classList.toggle('visible', hasFilters);
+    }
+
     /* ── APPLY FILTERS ── */
     function applyFilters() {
       const items = document.querySelectorAll('.gallery-item[data-format]');
@@ -83,6 +89,7 @@
       document.getElementById('galleryEmpty').classList.toggle('show', visible === 0);
 
       updateAvailability();
+      updateClearButton();
     }
 
     /* ── DYNAMIC AVAILABILITY — grey out impossible finish combos ── */
@@ -131,6 +138,7 @@
       document.getElementById('countNum').textContent =
         document.querySelectorAll('.gallery-item[data-format]').length;
       document.getElementById('galleryEmpty').classList.remove('show');
+      updateClearButton();
     }
 
     /* ── INIT — set count to actual number of items ── */

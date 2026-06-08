@@ -49,7 +49,12 @@ const ARROW_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" s
 const STICKY_CTA = {
   'work-with-me': `
   <div class="sticky-cta" role="complementary" aria-label="Contact">
-    <a href="contact.html">Work with me ${ARROW_SVG}</a>
+    <a href="commissions.html">Work with me ${ARROW_SVG}</a>
+  </div>`,
+
+  'get-in-touch': `
+  <div class="sticky-cta" role="complementary" aria-label="Contact">
+    <a href="contact.html">Get in touch ${ARROW_SVG}</a>
   </div>`,
 
   'email': `
@@ -58,7 +63,8 @@ const STICKY_CTA = {
   </div>`,
 };
 
-const NAV_CTA_HTML = `<a href="contact.html" class="nav-cta">Work with me</a>`;
+const NAV_CTA_HTML         = `<a href="commissions.html" class="nav-cta">Work with me</a>`;
+const NAV_CTA_CONTACT_HTML = `<a href="contact.html" class="nav-cta">Get in touch</a>`;
 
 // ── Parse front-matter ─────────────────────────────────────────────────────
 
@@ -82,7 +88,9 @@ function buildPage(filename) {
   const src = readFileSync(join(PAGES, filename), 'utf8');
   const { meta, body } = parseFrontMatter(src);
 
-  const navCta   = meta.navCta === 'true' ? NAV_CTA_HTML : '';
+  const navCta   = meta.navCta === 'contact' ? NAV_CTA_CONTACT_HTML
+                 : meta.navCta === 'true'    ? NAV_CTA_HTML
+                 : '';
   const stickyCta = STICKY_CTA[meta.stickyCta] || STICKY_CTA['work-with-me'];
   const bodyClass = meta.bodyClass ? ` class="${meta.bodyClass}"` : '';
 
@@ -93,7 +101,7 @@ function buildPage(filename) {
 
   const nav     = NAV_PARTIAL
     .replace('{{nav_cta}}', navCta)
-    .replace(`href="${filename}"`, `href="${filename}" class="active" aria-current="page"`);
+    .replace(`href="${filename}">`, `href="${filename}" class="active" aria-current="page">`);
   const footer  = FOOTER_PARTIAL.replace('{{sticky_cta}}', stickyCta) +
     (meta.extraScript ? `\n  <script src="${meta.extraScript}" defer></script>` : '');
 
