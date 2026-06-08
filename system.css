@@ -1562,7 +1562,7 @@ img {
 
 /* Brands */
 .commissions-brands {
-  padding: clamp(3rem, 6vw, 4.5rem) var(--space-page) clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(4rem, 8vw, 6rem) var(--space-page);
 }
 
 .commissions-brands-label {
@@ -1598,7 +1598,7 @@ img {
 
 /* Testimonials */
 .testimonials {
-  padding: clamp(2rem, 4vw, 3rem) var(--space-page) clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(4rem, 8vw, 6rem) var(--space-page);
   border-top: 1px solid var(--c-border);
 }
 
