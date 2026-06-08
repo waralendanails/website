@@ -1,20 +1,20 @@
-<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="42" height="42" fill="#F1F1F5"/>
-<path d="M8.24958 8.55L13.2394 21.05L14.361 23.55L16.979 17L18.9874 22.55L14.5678 33.55L4 8.55H8.24958Z" fill="black"/>
-<path d="M16.9782 17L18.984 22.55L18.4061 24L16.3748 18.5L16.9782 17Z" fill="url(#paint0_linear_2019_86)"/>
-<path d="M33.7504 8.55L28.7606 21.05L27.639 23.55L25.021 17L23.0126 22.55L27.4322 33.55L38 8.55H33.7504Z" fill="black"/>
-<path d="M25.0218 17L23.016 22.55L23.5939 24L25.6252 18.5L25.0218 17Z" fill="url(#paint1_linear_2019_86)"/>
-<path d="M20.8716 7.27L24.3903 16L22.4015 21.52L20.8886 17.75L19.4013 21.52L17.3785 16L20.8716 7.27Z" fill="url(#paint2_linear_2019_86)"/>
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="42" height="42" fill="#F2F1F5" stroke="#E5E5EB" stroke-width="2" stroke-linejoin="round"/>
+<path d="M9.24958 10.05L14.2394 22.55L15.361 25.05L17.979 18.5L19.9874 24.05L15.5678 35.05L5 10.05H9.24958Z" fill="black"/>
+<path d="M17.9782 18.5L19.984 24.05L19.4061 25.5L17.3748 20L17.9782 18.5Z" fill="url(#paint0_linear_2019_86)"/>
+<path d="M34.7504 10.05L29.7606 22.55L28.639 25.05L26.021 18.5L24.0126 24.05L28.4322 35.05L39 10.05H34.7504Z" fill="black"/>
+<path d="M26.0218 18.5L24.016 24.05L24.5939 25.5L26.6252 20L26.0218 18.5Z" fill="url(#paint1_linear_2019_86)"/>
+<path d="M21.8716 8.77L25.3903 17.5L23.4015 23.02L21.8886 19.25L20.4013 23.02L18.3785 17.5L21.8716 8.77Z" fill="url(#paint2_linear_2019_86)"/>
 <defs>
-<linearGradient id="paint0_linear_2019_86" x1="18.0236" y1="20" x2="17.1237" y2="20.3824" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_2019_86" x1="19.0236" y1="21.5" x2="18.1237" y2="21.8824" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00E6FF"/>
 <stop offset="1" stop-color="#1E0162"/>
 </linearGradient>
-<linearGradient id="paint1_linear_2019_86" x1="23.9764" y1="20" x2="24.8763" y2="20.3824" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_2019_86" x1="24.9764" y1="21.5" x2="25.8763" y2="21.8824" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00E6FF"/>
 <stop offset="1" stop-color="#1E0162"/>
 </linearGradient>
-<linearGradient id="paint2_linear_2019_86" x1="20.8844" y1="7.27" x2="20.8844" y2="21.52" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_2019_86" x1="21.8844" y1="8.77" x2="21.8844" y2="23.02" gradientUnits="userSpaceOnUse">
 <stop stop-color="#D90101"/>
 <stop offset="0.5" stop-color="#FF8D28"/>
 <stop offset="1" stop-color="#FFCC00"/>
