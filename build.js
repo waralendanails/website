@@ -128,7 +128,7 @@ ${footer}
 console.log('\nwaralenda build\n');
 
 // Copy static assets to dist
-['system.css', 'system.js', 'work.css'].forEach(f => {
+['system.css', 'system.js', 'work.css', 'favicon.svg'].forEach(f => {
   if (existsSync(`./${f}`)) {
     copyFileSync(`./${f}`, join(DIST, f));
     console.log(`  ✓ ${f} (copied)`);
