@@ -142,6 +142,13 @@ console.log('\nwaralenda build\n');
   }
 });
 
+// Copy data/gallery.json
+if (existsSync('./src/data/gallery.json')) {
+  mkdirSync(join(DIST, 'data'), { recursive: true });
+  copyFileSync('./src/data/gallery.json', join(DIST, 'data', 'gallery.json'));
+  console.log('  ✓ data/gallery.json (copied)');
+}
+
 const pages = readdirSync(PAGES).filter(f => f.endsWith('.html'));
 for (const page of pages) buildPage(page);
 

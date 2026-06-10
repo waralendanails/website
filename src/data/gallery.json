@@ -1,0 +1,345 @@
+[
+  {
+    "file": "image1.jpg",
+    "alt": "Shimmer holo swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image17.jpg",
+    "alt": "Freehand stripes holo multichrome",
+    "format": "nailart",
+    "style": ["freehand", "stripes"],
+    "finish": ["holo", "multichrome"]
+  },
+  {
+    "file": "image9.jpg",
+    "alt": "Flakie swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie"]
+  },
+  {
+    "file": "image5.jpg",
+    "alt": "Watermarble skittle cream topper",
+    "format": "nailart",
+    "style": ["watermarble", "skittle"],
+    "finish": ["cream", "topper", "flakie"]
+  },
+  {
+    "file": "image29.jpg",
+    "alt": "Thermal flakie swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["thermal", "flakie"]
+  },
+  {
+    "file": "image46.jpg",
+    "alt": "Snail Works Metal Coat swatch",
+    "format": "unique",
+    "style": [],
+    "finish": ["chrome"]
+  },
+  {
+    "file": "image30.jpg",
+    "alt": "Holo shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "shimmer"]
+  },
+  {
+    "file": "image2.jpg",
+    "alt": "Stamping neon nail art",
+    "format": "nailart",
+    "style": ["stamping"],
+    "finish": ["neon"]
+  },
+  {
+    "file": "image21.jpg",
+    "alt": "Freehand cream matte nail art",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["cream", "matte"]
+  },
+  {
+    "file": "image20.jpg",
+    "alt": "Freehand cream chrome nail art",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["cream", "chrome"]
+  },
+  {
+    "file": "image22.jpg",
+    "alt": "Skittle shimmer flakie holo",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["shimmer", "flakie", "holo"]
+  },
+  {
+    "file": "image31.jpg",
+    "alt": "Flakie holo reflective swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie", "holo", "reflective"]
+  },
+  {
+    "file": "image23.jpg",
+    "alt": "Freehand stripes multichrome nail art",
+    "format": "nailart",
+    "style": ["freehand", "stripes"],
+    "finish": ["holo", "multichrome"]
+  },
+  {
+    "file": "image32.jpg",
+    "alt": "Multichrome holo swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["multichrome", "holo"]
+  },
+  {
+    "file": "image24.jpg",
+    "alt": "Skittle watermarble holo nail art",
+    "format": "nailart",
+    "style": ["skittle", "watermarble"],
+    "finish": ["holo"]
+  },
+  {
+    "file": "image3.jpg",
+    "alt": "Magnetic multichrome swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["magnetic", "multichrome"]
+  },
+  {
+    "file": "image33.jpg",
+    "alt": "Stamping freehand cream shimmer",
+    "format": "nailart",
+    "style": ["stamping", "freehand"],
+    "finish": ["cream", "shimmer"]
+  },
+  {
+    "file": "image26.jpg",
+    "alt": "Polka dot skittle cream nail art",
+    "format": "nailart",
+    "style": ["polkadot", "skittle"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image34.jpg",
+    "alt": "Skittle shimmer nail art",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["shimmer"]
+  },
+  {
+    "file": "image27.jpg",
+    "alt": "French skittle shimmer cream nail art",
+    "format": "nailart",
+    "style": ["skittle", "french"],
+    "finish": ["shimmer", "cream"]
+  },
+  {
+    "file": "image35.jpg",
+    "alt": "Holo reflective swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "reflective"]
+  },
+  {
+    "file": "image28.jpg",
+    "alt": "Gradient skittle jelly topper flakie",
+    "format": "nailart",
+    "style": ["gradient", "skittle"],
+    "finish": ["gradient", "jelly", "topper", "flakie"]
+  },
+  {
+    "file": "image36.jpg",
+    "alt": "Holo shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "shimmer"]
+  },
+  {
+    "file": "image37.jpg",
+    "alt": "Freehand skittle cream nail art",
+    "format": "nailart",
+    "style": ["freehand", "skittle"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image38.jpg",
+    "alt": "Stamping cream nail art",
+    "format": "nailart",
+    "style": ["stamping"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image41.jpg",
+    "alt": "Shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer"]
+  },
+  {
+    "file": "image39.jpg",
+    "alt": "Gradient skittle cream topper glitter",
+    "format": "nailart",
+    "style": ["gradient", "skittle"],
+    "finish": ["cream", "topper", "glitter"]
+  },
+  {
+    "file": "image42.jpg",
+    "alt": "Shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer"]
+  },
+  {
+    "file": "image40.jpg",
+    "alt": "Freehand french gradient glitter chrome",
+    "format": "nailart",
+    "style": ["freehand", "french", "gradient"],
+    "finish": ["glitter", "chrome"]
+  },
+  {
+    "file": "image43.jpg",
+    "alt": "Cream swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image4.jpg",
+    "alt": "Skittle gradient reflective",
+    "format": "nailart",
+    "style": ["skittle", "gradient"],
+    "finish": ["reflective"]
+  },
+  {
+    "file": "image44.jpg",
+    "alt": "Cream swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image45.jpg",
+    "alt": "Iridescent holo shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["iridescent", "holo", "shimmer"]
+  },
+  {
+    "file": "image18.jpg",
+    "alt": "Freehand gradient holo nail art",
+    "format": "nailart",
+    "style": ["freehand", "gradient"],
+    "finish": ["holo", "cream"]
+  },
+  {
+    "file": "image47.jpg",
+    "alt": "Reflective shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["reflective", "shimmer"]
+  },
+  {
+    "file": "image6.jpg",
+    "alt": "Shimmer holo swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image7.jpg",
+    "alt": "Polka dot skittle neon nail art",
+    "format": "nailart",
+    "style": ["polkadot", "skittle"],
+    "finish": ["neon"]
+  },
+  {
+    "file": "image19.jpg",
+    "alt": "Freehand french negative space nail art",
+    "format": "nailart",
+    "style": ["freehand", "french", "negativespace"],
+    "finish": ["glitter", "chrome", "cream"]
+  },
+  {
+    "file": "image48.jpg",
+    "alt": "Thermal reflective swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["thermal", "reflective"]
+  },
+  {
+    "file": "image8.jpg",
+    "alt": "Skittle cream topper flakie",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["cream", "topper", "flakie"]
+  },
+  {
+    "file": "image49.jpg",
+    "alt": "Thermal reflective swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["thermal", "reflective"]
+  },
+  {
+    "file": "image25.jpg",
+    "alt": "Shimmer holo swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image10.jpeg",
+    "alt": "Freehand holo multichrome flakie",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["holo", "multichrome", "flakie"]
+  },
+  {
+    "file": "image33.jpg",
+    "alt": "Skittle stamping cream shimmer",
+    "format": "nailart",
+    "style": ["stamping", "skittle"],
+    "finish": ["cream", "shimmer"]
+  },
+  {
+    "file": "image11.jpg",
+    "alt": "Thermal flakie swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["thermal", "flakie"]
+  },
+  {
+    "file": "image15.jpg",
+    "alt": "Freehand skittle jelly nail art",
+    "format": "nailart",
+    "style": ["freehand", "skittle"],
+    "finish": ["jelly"]
+  },
+  {
+    "file": "image12.jpg",
+    "alt": "Multichrome shimmer swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["multichrome", "shimmer"]
+  },
+  {
+    "file": "image13.png",
+    "alt": "Chrome holo swatch",
+    "format": "swatch",
+    "style": [],
+    "finish": ["chrome", "holo"]
+  },
+  {
+    "file": "image16.jpg",
+    "alt": "Stamping freehand matte cream chrome",
+    "format": "nailart",
+    "style": ["stamping", "freehand"],
+    "finish": ["matte", "cream", "chrome"]
+  }
+]
