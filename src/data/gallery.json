@@ -341,5 +341,167 @@
     "format": "nailart",
     "style": ["stamping", "freehand"],
     "finish": ["matte", "cream", "chrome"]
+  },
+{
+    "file": "image50.jpg",
+    "alt": "Swatch of chartreuse flakie nail polish with red shimmer",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie", "shimmer"]
+  },
+{
+    "file": "image51.jpg",
+    "alt": "Swatch of bright pink jelly oacked with metallic flakies",
+    "format": "swatch",
+    "style": [],
+    "finish": ["jelly", "flakie"]
+  },
+{
+    "file": "image72.jpg",
+    "alt": "Nail art of pastel gradient sky with delicate white clouds",
+    "format": "nailart",
+    "style": ["freehand", "gradient"],
+    "finish": ["shimmer", "cream"]
+  },
+  {
+    "file": "image71.jpg",
+    "alt": "Swatch of an off-white polish with pink shimmer and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image70.jpg",
+    "alt": "Nail art of metallic sage polish, swirled into a seashell texture",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["metallic"]
+  },
+  {
+    "file": "image69.jpg",
+    "alt": "Image of a hand with a skittle manicure over a bright buquet of flowers. Colours on the nails are bright orange, grass green, dusty purple and pale gold",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["shimmer", "flakie", "metallic"]
+  },
+  {
+    "file": "image68.jpg",
+    "alt": "Swatch of a black-to-clear thermal polish, with orange and teal metallic flakies and teal shimmer",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "flakie", "thermal"]
+  },
+  {
+    "file": "image67.jpg",
+    "alt": "Macro swatch of a wine-red / purple nail polish with deep red shimmer and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image66.jpg",
+    "alt": "Chestnut inspired nail art:chestnut jelly base and matte off-white centre",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["jelly", "matte"]
+  },
+  {
+    "file": "image65.jpg",
+    "alt": "Macro swatch of a black nail polish with red, rose gold and gold flakies",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie"]
+  },
+  {
+    "file": "image64.jpg",
+    "alt": "Macro swatch of a black magnetic nail polish with orange magnetic shimmer stripe",
+    "format": "swatch",
+    "style": [],
+    "finish": ["magnetic", "shimmer"]
+  }, 
+  {
+    "file": "image63.jpg",
+    "alt": "Swatch of a warm, dark green crushed holo nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "flakie"]
+  },
+  {
+    "file": "image62.jpg",
+    "alt": "Swatch of a teal crushed holo nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "flakie"]
+  },
+ {
+    "file": "image61.jpg",
+    "alt": "Macro swatch of a warm red magnetic jelly polish with gold magnetic stripe, gold and red metallic flakies and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "flakie", "magnetic", "jelly"]
+  },
+ {
+    "file": "image60.jpg",
+    "alt": "Blue, orange and white nail art, each finger is different pattern: stripes, polka dot frame, french and oranges, french and an orange flower",
+    "format": "nailart",
+    "style": ["freehand", "french", "polkadot", "stripes"],
+    "finish": ["cream", "matte"]
+  },
+ {
+    "file": "image59.jpg",
+    "alt": "Nail art of glossy mid grey holo polish with a mattified french tip and black striping tape",
+    "format": "nailart",
+    "style": ["freench", "stripes"],
+    "finish": ["holo", "matte"]
+  },
+   {
+    "file": "image58.jpg",
+    "alt": "Macro swatch of a very densely packed purple jelly flakie with blue, purple and fuchsia flakies nad red reflective particles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie", "jelly"]
+  },
+  {
+    "file": "image57.jpg",
+    "alt": "Macro swatch of a very densely packed blue jelly flakie with blue, cyan and green flakies nad white reflective particles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["flakie", "jelly"]
+  },
+  {
+    "file": "image56.jpg",
+    "alt": "Macro swatch of a light blue jelly with black and fuchsia hex glitters in different sizes",
+    "format": "swatch",
+    "style": [],
+    "finish": ["glitter", "jelly"]
+  },
+  {
+    "file": "image55.jpg",
+    "alt": "Macro swatch of textured grassy green nail polish",
+    "format": ["swatch", "unique"],
+    "style": [],
+    "finish": ["cream"]
+  },
+   {
+    "file": "image54.jpg",
+    "alt": "Macro swatch of a dark blue magnetic nail polish with pink to orange mmagnetic shimmer stripe, intense dark blue shimmer and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["magnetic", "holo", "shimmer"]
+   },
+   {
+    "file": "image53.jpg",
+    "alt": "Macro swatch of a black magnetic nail polish with teal-to-purple magnetic shimmer stripe, teal and purple shimmer and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["holo", "shimmer", "magnetic"]
+  },
+  {
+    "file": "image52.jpg",
+    "alt": "Macro swatch of a black magnetic nail polish with a pale gold magnetc stripe, red shimmer and holo sparkles",
+    "format": "swatch",
+    "style": [],
+    "finish": ["magnetic", "shimmer", "holo"]
   }
 ]
+
