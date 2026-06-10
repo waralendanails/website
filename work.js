@@ -6,6 +6,16 @@ function getSeededRandom(seed) {
   };
 }
 
+/* ── FISHER-YATES SHUFFLE ── */
+function shuffleArray(arr, rng) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 /* ── SHUFFLE WITH VARIETY FOR FIRST 12 ITEMS ── */
 function shuffleGallery(items) {
   // Get or create session seed
@@ -14,67 +24,29 @@ function shuffleGallery(items) {
     seed = Math.floor(Math.random() * 233280);
     sessionStorage.setItem('gallerySeed', seed);
   }
-  const seededRandom = getSeededRandom(seed);
+  const rng = getSeededRandom(seed);
 
-  // Group items by format
-  const byFormat = { swatch: [], nailart: [], unique: [] };
-  items.forEach(item => {
-    if (byFormat[item.format]) {
-      byFormat[item.format].push(item);
-    }
-  });
-
-  // Shuffle within each format group
-  Object.keys(byFormat).forEach(fmt => {
-    for (let i = byFormat[fmt].length - 1; i > 0; i--) {
-      const j = Math.floor(seededRandom() * (i + 1));
-      [byFormat[fmt][i], byFormat[fmt][j]] = [byFormat[fmt][j], byFormat[fmt][i]];
-    }
-  });
-
-  // Build first 12 items with variety (no 3+ consecutive same finish)
-  const first12 = [];
-  const formats = ['swatch', 'nailart', 'unique'];
-  const indices = { swatch: 0, nailart: 0, unique: 0 };
-
-  while (first12.length < 12 && Object.values(indices).some((i, fmt) => i < byFormat[formats[fmt]].length)) {
-    for (const fmt of formats) {
-      if (first12.length >= 12) break;
-      if (indices[fmt] < byFormat[fmt].length) {
-        const candidate = byFormat[fmt][indices[fmt]];
-
-        // Check if adding this would create 3+ consecutive same finish
-        let canAdd = true;
-        if (first12.length >= 2) {
-          const lastTwo = first12.slice(-2);
-          const lastFinish = lastTwo[1].finish[0];
-          const candidateFinish = candidate.finish[0];
-
-          if (lastTwo[0].finish[0] === lastFinish && lastFinish === candidateFinish) {
-            canAdd = false;
-          }
-        }
-
-        if (canAdd) {
-          first12.push(candidate);
-          indices[fmt]++;
-        }
+  // Shuffle all items
+  const allShuffled = shuffleArray(items, rng);
+  
+  // Check first 12 for 3+ consecutive same finish and reorder if needed
+  let first12 = allShuffled.slice(0, 12);
+  let remaining = allShuffled.slice(12);
+  
+  // Simple check: if there are 3+ consecutive same finish in first 12, move one to end
+  for (let attempt = 0; attempt < 20; attempt++) {
+    let hasThreeConsecutive = false;
+    for (let i = 0; i < first12.length - 2; i++) {
+      if (first12[i].finish[0] === first12[i + 1].finish[0] && 
+          first12[i + 1].finish[0] === first12[i + 2].finish[0]) {
+        // Move the middle one to end
+        const move = first12.splice(i + 1, 1)[0];
+        remaining.unshift(move);
+        hasThreeConsecutive = true;
+        break;
       }
     }
-  }
-
-  // Collect remaining items
-  const remaining = [];
-  Object.keys(byFormat).forEach(fmt => {
-    while (indices[fmt] < byFormat[fmt].length) {
-      remaining.push(byFormat[fmt][indices[fmt]++]);
-    }
-  });
-
-  // Shuffle remaining items
-  for (let i = remaining.length - 1; i > 0; i--) {
-    const j = Math.floor(seededRandom() * (i + 1));
-    [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+    if (!hasThreeConsecutive) break;
   }
 
   return first12.concat(remaining);
@@ -83,7 +55,14 @@ function shuffleGallery(items) {
 /* ── RENDER GALLERY FROM JSON DATA ── */
 function renderGallery(items) {
   const grid = document.getElementById('galleryGrid');
+  if (!grid) {
+    console.error('Gallery grid not found');
+    return;
+  }
+
   const shuffled = shuffleGallery(items);
+  
+  const emptyState = grid.querySelector('.gallery-empty');
 
   // Build HTML for each item
   shuffled.forEach(item => {
@@ -144,7 +123,11 @@ function renderGallery(items) {
     html += '</div>';
 
     div.innerHTML = html;
-    grid.insertBefore(div, grid.lastElementChild);
+    if (emptyState) {
+      grid.insertBefore(div, emptyState);
+    } else {
+      grid.appendChild(div);
+    }
   });
 
   // Post-render: set count, run filters and availability, wrap tag backgrounds
