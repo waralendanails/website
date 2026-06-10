@@ -330,8 +330,8 @@
   },
   {
     "file": "image13.png",
-    "alt": "Chrome holo swatch",
-    "format": "swatch",
+    "alt": "Swatch of a holo chrome silver powder",
+    "format": ["swatch", "unique"],
     "style": [],
     "finish": ["chrome", "holo"]
   },
