@@ -1,55 +1,58 @@
-/* ── SEEDED RANDOM FOR CONSISTENT SHUFFLING ── */
-function getSeededRandom(seed) {
-  return function() {
-    seed = (seed * 9301 + 49297) % 233280;
-    return seed / 233280;
-  };
-}
-
-/* ── FISHER-YATES SHUFFLE ── */
-function shuffleArray(arr, rng) {
-  const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
-/* ── SHUFFLE WITH VARIETY FOR FIRST 12 ITEMS ── */
+/* ── GALLERY SHUFFLE ── */
 function shuffleGallery(items) {
-  // Get or create session seed
-  let seed = parseInt(sessionStorage.getItem('gallerySeed'));
-  if (!seed) {
-    seed = Math.floor(Math.random() * 233280);
-    sessionStorage.setItem('gallerySeed', seed);
-  }
-  const rng = getSeededRandom(seed);
+  const SESSION_KEY = 'galleryOrder';
 
-  // Shuffle all items
-  const allShuffled = shuffleArray(items, rng);
-  
-  // Check first 12 for 3+ consecutive same finish and reorder if needed
-  let first12 = allShuffled.slice(0, 12);
-  let remaining = allShuffled.slice(12);
-  
-  // Simple check: if there are 3+ consecutive same finish in first 12, move one to end
-  for (let attempt = 0; attempt < 20; attempt++) {
-    let hasThreeConsecutive = false;
-    for (let i = 0; i < first12.length - 2; i++) {
-      if (first12[i].finish[0] === first12[i + 1].finish[0] && 
-          first12[i + 1].finish[0] === first12[i + 2].finish[0]) {
-        // Move the middle one to end
-        const move = first12.splice(i + 1, 1)[0];
-        remaining.unshift(move);
-        hasThreeConsecutive = true;
-        break;
-      }
-    }
-    if (!hasThreeConsecutive) break;
+  // Reload counts as a new session — clear stored order so we reshuffle
+  const navType = performance.getEntriesByType('navigation')[0]?.type;
+  if (navType === 'reload') {
+    sessionStorage.removeItem(SESSION_KEY);
   }
 
-  return first12.concat(remaining);
+  // Restore stored order for same-session navigations
+  const stored = sessionStorage.getItem(SESSION_KEY);
+  if (stored) {
+    try {
+      const files = JSON.parse(stored);
+      const map = new Map(items.map(item => [item.file, item]));
+      const restored = files.map(f => map.get(f)).filter(Boolean);
+      const restoredSet = new Set(files);
+      const extras = items.filter(item => !restoredSet.has(item.file));
+      return restored.concat(extras);
+    } catch (_) {}
+  }
+
+  // Pass 1 — fill slots in order, one random unused image per tag
+  const SLOTS = ['magnetic', 'flakie', 'thermal', 'watermarble', 'neon',
+                 'stamping', 'shimmer', 'chrome', 'gradient', 'unique', 'cream'];
+  const used = new Set();
+  const pass1 = [];
+
+  for (const tag of SLOTS) {
+    const candidates = items.reduce((acc, item, i) => {
+      if (used.has(i)) return acc;
+      const matches = tag === 'unique'
+        ? item.format === 'unique'
+        : item.finish.includes(tag) || item.style.includes(tag);
+      if (matches) acc.push(i);
+      return acc;
+    }, []);
+
+    if (candidates.length === 0) continue;
+    const pick = candidates[Math.floor(Math.random() * candidates.length)];
+    used.add(pick);
+    pass1.push(items[pick]);
+  }
+
+  // Pass 2 — remaining images in Fisher-Yates order
+  const pass2 = items.filter((_, i) => !used.has(i));
+  for (let i = pass2.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pass2[i], pass2[j]] = [pass2[j], pass2[i]];
+  }
+
+  const result = pass1.concat(pass2);
+  sessionStorage.setItem(SESSION_KEY, JSON.stringify(result.map(item => item.file)));
+  return result;
 }
 
 /* ── RENDER GALLERY FROM JSON DATA ── */
