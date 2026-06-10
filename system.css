@@ -767,7 +767,7 @@ img {
 
   .nine-grid {
     position: absolute;
-    left: clamp(2rem, 5vw, 3.5rem);
+    left: 38%;
     top: 0;
     right: 0;
     bottom: 0;
