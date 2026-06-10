@@ -115,7 +115,7 @@
     "file": "image33.jpg",
     "alt": "Stamping freehand cream shimmer",
     "format": "nailart",
-    "style": ["stamping", "freehand"],
+    "style": ["stamping", "skittle"],
     "finish": ["cream", "shimmer"]
   },
   {
@@ -299,13 +299,6 @@
     "format": "nailart",
     "style": ["freehand"],
     "finish": ["holo", "multichrome", "flakie"]
-  },
-  {
-    "file": "image33.jpg",
-    "alt": "Skittle stamping cream shimmer",
-    "format": "nailart",
-    "style": ["stamping", "skittle"],
-    "finish": ["cream", "shimmer"]
   },
   {
     "file": "image11.jpg",
