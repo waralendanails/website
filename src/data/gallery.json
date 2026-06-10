@@ -331,7 +331,7 @@
   {
     "file": "image13.png",
     "alt": "Swatch of a holo chrome silver powder",
-    "format": ["swatch", "unique"],
+    "format": "unique",
     "style": [],
     "finish": ["chrome", "holo"]
   },
@@ -478,7 +478,7 @@
   {
     "file": "image55.jpg",
     "alt": "Macro swatch of textured grassy green nail polish",
-    "format": ["swatch", "unique"],
+    "format": "unique",
     "style": [],
     "finish": ["cream"]
   },
