@@ -1572,9 +1572,11 @@ img {
 }
 
 /* Brands */
-.commissions-brands,
-.commissions-cta {
-  margin-left: clamp(2.5rem, 9vw, 9rem);
+@media (min-width: 1024px) {
+  .commissions-brands,
+  .commissions-cta {
+    margin-left: clamp(-9rem, -7vw, -4rem);
+  }
 }
 
 .commissions-brands-list,
