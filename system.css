@@ -1603,7 +1603,7 @@ img {
 }
 
 .testimonials-section .section-inner {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1440px, calc(100% - 96px));
   margin: 0 auto;
 }
 
@@ -1616,7 +1616,7 @@ img {
 }
 
 .testimonials-section h2 {
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 0 3.5rem;
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 0.95;
@@ -1626,14 +1626,14 @@ img {
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
 }
 
 .testimonial-card {
   position: relative;
-  padding: 2rem;
-  min-height: 300px;
+  padding: 2.25rem 2.5rem;
+  min-height: 360px;
   border: 1px solid rgba(104, 104, 184, 0.22);
   background: rgba(255, 255, 255, 0.45);
 }
@@ -1652,8 +1652,8 @@ img {
   margin: 0;
   font-family: Georgia, serif;
   font-style: italic;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.65;
   color: #1E1F25;
 }
 
