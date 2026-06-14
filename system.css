@@ -1562,7 +1562,7 @@ img {
 
 /* Shared proof area: brands + testimonials + CTA */
 .commissions-proof {
-  padding: 0 0 clamp(5rem, 10vw, 8rem);
+  padding: clamp(6rem, 11vw, 10rem) 0 clamp(5rem, 10vw, 8rem);
   background: var(--c-base);
 }
 
@@ -1616,8 +1616,8 @@ img {
 }
 
 .testimonials-heading {
-  max-width: 820px;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  max-width: 680px;
+  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
 }
 
 .testimonials-section .eyebrow {
@@ -1626,12 +1626,13 @@ img {
 }
 
 .testimonials-section h2 {
+  max-width: 640px;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 5.5vw, 5.6rem);
-  line-height: 0.95;
+  font-size: var(--size-title);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   font-weight: 300;
-  letter-spacing: -0.04em;
   color: var(--c-text-primary);
 }
 
