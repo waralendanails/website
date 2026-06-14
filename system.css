@@ -1572,6 +1572,16 @@ img {
 }
 
 /* Brands */
+.commissions-brands,
+.commissions-cta {
+  margin-left: clamp(2.5rem, 9vw, 9rem);
+}
+
+.commissions-brands-list,
+.commissions-cta-text {
+  max-width: 760px;
+}
+
 .commissions-brands {
   padding: clamp(3rem, 5vw, 4.5rem) 0 0;
   text-align: left;
@@ -1592,7 +1602,6 @@ img {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.45rem;
-  max-width: 900px;
 }
 
 .commissions-brands-list li {
@@ -1710,7 +1719,6 @@ img {
   font-size: var(--size-md);
   color: var(--c-text-secondary);
   line-height: 1.65;
-  max-width: 520px;
   text-align: left;
 }
 
