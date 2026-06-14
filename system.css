@@ -1562,7 +1562,7 @@ img {
 
 /* Shared proof area: brands + testimonials + CTA */
 .commissions-proof {
-  padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(5rem, 10vw, 8rem);
+  padding: 0 0 clamp(5rem, 10vw, 8rem);
   background: var(--c-base);
 }
 
@@ -1573,7 +1573,8 @@ img {
 
 /* Brands */
 .commissions-brands {
-  padding: 0 0 clamp(4rem, 7vw, 6rem);
+  padding: clamp(4rem, 7vw, 5.5rem) 0 clamp(4rem, 7vw, 5.5rem);
+  text-align: center;
 }
 
 .commissions-brands-label {
@@ -1589,8 +1590,10 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  max-width: 760px;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .commissions-brands-list li {
