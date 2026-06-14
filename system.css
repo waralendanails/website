@@ -1575,7 +1575,9 @@ img {
 @media (min-width: 1024px) {
   .commissions-brands,
   .commissions-cta {
-    margin-left: clamp(1.5rem, 4vw, 2.5rem);
+    /* Pins left edge to var(--space-page) + card-padding from the viewport,
+       regardless of where the centered container sits */
+    margin-left: calc(var(--space-page) + clamp(1.5rem, 4vw, 2.5rem) - (100vw - min(1320px, 100vw - 96px)) / 2);
   }
 }
 
