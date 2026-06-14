@@ -1628,8 +1628,8 @@ img {
 }
 
 .testimonials-heading {
-  max-width: 680px;
-  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+  max-width: 820px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .testimonials-section .eyebrow {
@@ -1638,13 +1638,12 @@ img {
 }
 
 .testimonials-section h2 {
-  max-width: 640px;
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--size-title);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  font-size: clamp(2.7rem, 5.5vw, 5.6rem);
+  line-height: 0.95;
   font-weight: 300;
+  letter-spacing: -0.04em;
   color: var(--c-text-primary);
 }
 
