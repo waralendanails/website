@@ -1573,8 +1573,8 @@ img {
 
 /* Brands */
 .commissions-brands {
-  padding: clamp(4rem, 7vw, 5.5rem) 0 clamp(4rem, 7vw, 5.5rem);
-  text-align: center;
+  padding: clamp(3rem, 5vw, 4.5rem) 0 0;
+  text-align: left;
 }
 
 .commissions-brands-label {
@@ -1590,10 +1590,9 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.45rem;
   max-width: 900px;
-  margin-inline: auto;
 }
 
 .commissions-brands-list li {
