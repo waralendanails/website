@@ -1567,9 +1567,8 @@ img {
 }
 
 .commissions-proof-inner {
-  width: min(1320px, calc(100% - var(--space-page) * 2));
-  margin-left: var(--space-page);
-  margin-right: auto;
+  width: min(1320px, calc(100% - 96px));
+  margin-inline: auto;
 }
 
 /* Brands */
