@@ -14,7 +14,9 @@
       "Read(//Users/paulapersonal/Desktop/files/**)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git -C /Users/paulapersonal/Desktop/waralenda/waralenda.com add src/pages/commissions.html system.css)",
+      "Bash(git -C /Users/paulapersonal/Desktop/waralenda/waralenda.com commit -m ' *)"
     ]
   }
 }
