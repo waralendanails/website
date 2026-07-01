@@ -24,7 +24,7 @@
     "file": "image5.jpg",
     "alt": "Watermarble skittle cream topper",
     "format": "nailart",
-    "style": ["watermarble", "skittle"],
+    "style": ["marble", "skittle"],
     "finish": ["cream", "topper", "flakie"]
   },
   {
@@ -99,9 +99,9 @@
   },
   {
     "file": "image24.jpg",
-    "alt": "Skittle watermarble holo nail art",
+    "alt": "Skittle marble holo nail art",
     "format": "nailart",
-    "style": ["skittle", "watermarble"],
+    "style": ["skittle", "marble"],
     "finish": ["holo"]
   },
   {
@@ -495,6 +495,55 @@
     "format": "swatch",
     "style": [],
     "finish": ["magnetic", "shimmer", "holo"]
+  },
+    {
+    "file": "image73.jpg",
+    "alt": "Macro swatch of a periwinkle nail polish with magenta-fuchsia shimmer",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer"]
+  },
+    {
+    "file": "image74.jpg",
+    "alt": "Image of hand with a skittle reverse French manicure. Each nail is a different colour: green, light blue, purple and reddish pink. For each nail, the base is a jelly peeking near the cuticle, the rest of the nail is a matching shimmergraphic polish]",
+    "format": "nailart",
+    "style": ["skittle", "french"],
+    "finish": ["jelly", "shimmer", "holo"]
+  },
+    {
+    "file": "image75.jpg",
+    "alt": "Macro swatch of a black jelly nail polish with dark burgundy red shimmer and yellow-to-green metallic flakies",
+    "format": "swatch",
+    "style": [],
+    "finish": ["jelly", "shimmer", "flakie"]
+  },
+    {
+    "file": "image76.jpg",
+    "alt": "A picture of a hand with a skittle dotticure. Nail base colours are red, orange, yellow, and red, and the corresponding dots are orange, red, orange, and yellow.",
+    "format": "nailart",
+    "style": ["skittle", "polkadot"],
+    "finish": ["cream"]
+  },
+    {
+    "file": "image77.jpg",
+    "alt": "An image of a hand with colourful polka dots covering the entire nail",
+    "format": "nailart",
+    "style": ["polkadot"],
+    "finish": ["cream"]
+  },
+    {
+    "file": "image78.jpg",
+    "alt": "An image of a hand with a double-french tip skittle manicure.",
+    "format": "nailart",
+    "style": ["french", "skittle", "freehand"],
+    "finish": ["cream"]
+  },
+    {
+    "file": "image79.jpg",
+    "alt": "Image of a hand with a liquid nail art manicure using bright red, orange and yellow colours.",
+    "format": "nailart",
+    "style": ["marble"],
+    "finish": ["cream"]
   }
 ]
 

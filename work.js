@@ -22,7 +22,7 @@ function shuffleGallery(items) {
   }
 
   // Pass 1 — fill slots in order, one random unused image per tag
-  const SLOTS = ['magnetic', 'flakie', 'thermal', 'watermarble', 'neon',
+  const SLOTS = ['magnetic', 'flakie', 'thermal', 'marble', 'neon',
                  'stamping', 'shimmer', 'chrome', 'gradient', 'unique', 'cream'];
   const used = new Set();
   const pass1 = [];
@@ -94,7 +94,7 @@ function renderGallery(items) {
         'skittle': 'Skittle',
         'stamping': 'Stamping',
         'stripes': 'Stripes',
-        'watermarble': 'Watermarble'
+        'marble': 'Marble'
       };
       const styleParts = item.style.map(s => styleLabels[s] || s).join(' · ');
       html += `<span class="tag tag-format">${styleParts}</span>`;
