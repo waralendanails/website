@@ -544,6 +544,167 @@
     "format": "nailart",
     "style": ["marble"],
     "finish": ["cream"]
+  },
+  {
+    "file": "image80.jpg",
+    "alt": "Freehand abstract color-block nail art in red, blue, green and tan",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image81.jpg",
+    "alt": "Colorful confetti polka dot nail art with Holo Taco polishes",
+    "format": "nailart",
+    "style": ["polkadot"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image82.jpg",
+    "alt": "Colorful French tip nail art in teal, pink, purple and coral",
+    "format": "nailart",
+    "style": ["french"],
+    "finish": ["cream"]
+  },
+  {
+    "file": "image83.jpg",
+    "alt": "Leopard print and holographic glitter stamped nail art",
+    "format": "nailart",
+    "style": ["stamping", "freehand", "gradient", "watermarble"],
+    "finish": ["holo", "glitter", "metallic"]
+  },
+  {
+    "file": "image84.jpg",
+    "alt": "Swatch of periwinkle-blue polish with pink and gold shimmer",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image85.jpg",
+    "alt": "Macro swatch of black glitter holographic nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "holo"]
+  },
+  {
+    "file": "image86.jpg",
+    "alt": "Freehand jellyfish nail art on blue glitter base",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["flakie", "iridescent", "jelly"]
+  },
+  {
+    "file": "image87.jpg",
+    "alt": "Gold, navy and red striped nail art",
+    "format": "nailart",
+    "style": ["stripes", "freehand"],
+    "finish": ["shimmer", "cream"]
+  },
+  {
+    "file": "image88.jpg",
+    "alt": "Swatch of deep cranberry cream polish with holo shimmer",
+    "format": "swatch",
+    "style": [],
+    "finish": ["shimmer", "cream", "holo"]
+  },
+  {
+    "file": "image89.jpg",
+    "alt": "Macro swatch of mirror gold chrome nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["chrome", "metallic"]
+  },
+  {
+    "file": "image90.jpg",
+    "alt": "Swatch of dusty rose and teal glitter nail polish",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["glitter", "shimmer", "magnetic"]
+  },
+  {
+    "file": "image91.jpg",
+    "alt": "Swatch of green-gold multichrome, magnetic nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["multichrome", "magnetic"]
+  },
+  {
+    "file": "image92.jpg",
+    "alt": "Macro swatch of green-purple multichrome, magnetic flakie nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["multichrome", "magnetic", "flakie"]
+  },
+  {
+    "file": "image93.jpg",
+    "alt": "Freehand floral nail art",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["metallic", "shimmer", "iridescent", "cream"]
+  },
+  {
+    "file": "image94.jpg",
+    "alt": "Freehand cherry nail art with matte red and green accents",
+    "format": "nailart",
+    "style": ["freehand", "skittle"],
+    "finish": ["holo", "cream", "iridescent", "shimmer"]
+  },
+  {
+    "file": "image95.jpg",
+    "alt": "Magnetic skittle in the double swirl effect",
+    "format": "nailart",
+    "style": ["skittle"],
+    "finish": ["magnetic", "holo", "multichrome"]
+  },
+  {
+    "file": "image96.jpg",
+    "alt": "Freehand red poppy flower nail art with gold outline",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["iridescent", "glitter"]
+  },
+  {
+    "file": "image97.jpg",
+    "alt": "Holographic glitter nail art with copper and green polka dots",
+    "format": "nailart",
+    "style": ["polkadot", "skittle"],
+    "finish": ["holo", "metallic", "flakie"]
+  },
+  {
+    "file": "image98.jpg",
+    "alt": "Freehand red poppy flower nail art on iridescent glitter",
+    "format": "nailart",
+    "style": ["freehand"],
+    "finish": ["iridescent", "glitter", "flakie", "metallic"]
+  },
+  {
+    "file": "image99.jpg",
+    "alt": "Swirl nail art on flakie polishes",
+    "format": "nailart",
+    "style": ["freehand", "skittle"],
+    "finish": ["matte", "flakie"]
+  },
+  {
+    "file": "image100.jpg",
+    "alt": "Macro swatch of red jelly polish with blue-purple flakies",
+    "format": "swatch",
+    "style": [],
+    "finish": ["jelly", "flakie"]
+  },
+  {
+    "file": "image101.jpg",
+    "alt": "Macro swatch of blue-purple UV-reactive nail polish",
+    "format": "swatch",
+    "style": [],
+    "finish": ["UV-reactive", "shimmer"]
+  },
+  {
+    "file": "image102.jpg",
+    "alt": "Neon free-hand floral and leaf nail art in green, yellow, pink and purple",
+    "format": "nailart",
+    "style": ["freehand", "floral"],
+    "finish": ["neon", "matte", "jelly"]
   }
 ]
 
